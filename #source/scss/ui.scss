@@ -1,0 +1,88 @@
+.ibg{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.ibg img{
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  //или display: none; вместо всего выше
+}
+
+.slick-slider{
+	position: relative;
+	.slick-track, .slick-list {}
+	.slick-list{
+		overflow: hidden;
+	}
+	.slick-track{
+		@include flexbox();
+		align-items: flex-start;
+	}
+	.slick-slide{}
+	.slick-dots{
+		padding: 80px 0 0 0;	//отступ до точек
+		@media (max-width: $md2+px){
+	    padding-top: 70px;
+	  }
+	  @media (max-width: $md3+px){
+	    padding-top: 50px;
+	  }
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+		li{
+			margin: 0 5px;	//отступ между точками
+			button{
+				font-size: 0;
+				width: 11px;
+				height: 11px;
+				border-radius: 50%;
+				border: 1px solid #c8c8c8;
+				background-color: rgba(40,47,53,0.0);
+			}
+			&.slick-active{
+				button{
+					background-color: #a9afb3;
+				}
+			}
+		}
+	}
+}
+
+input[type=text], input[type=email], input[type=tel], textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; 
+  &:-moz-placeholder { 
+	  	font-size: 20px;
+		line-height: 24px;
+		font-style: italic;
+		color: #929292; 
+	}
+  &::-webkit-input-placeholder { 
+		font-size: 20px;
+		line-height: 24px;
+		font-style: italic;
+		color: #929292; 
+	}
+}
+
+.input {
+  border: 1px solid #d3d7d9;
+  height: 69px;
+  border-radius: 0 !important;
+  width: 100%;
+  display: block;
+  padding: 0 28px;
+  background-color: #fff; 
+}
+.input.err {
+    border: 1px solid #c33124; 
+}
